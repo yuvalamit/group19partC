@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charest="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>דף הבית</title>
+    <link rel="stylesheet" href="../../../../../../Documents/School/WEB/group19/FoodBook/HomePage.css" />
+    <script src="../../../../../../Documents/School/WEB/group19/FoodBook/DataBase.js"></script>
+    <script src="../../../../../../Documents/School/WEB/group19/FoodBook/HomePage.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="navIcon">
+        <a href="../../../../../../Documents/School/WEB/group19/FoodBook/MyRecipes.html">
+          <img src="../../../../../../Documents/School/WEB/group19/FoodBook/Pic/personal.png" alt="איזור אישי" height="60" />
+        </a>
+        <a href="../../../../../../Documents/School/WEB/group19/FoodBook/UpLoad.html">
+          <!-- TODO: להוסיף את הקישור להעלאת מתכון -->
+          <img src="../../../../../../Documents/School/WEB/group19/FoodBook/Pic/upload.png" alt="העלאת מתכון" height="60" />
+        </a>
+        <a href="./HomePage.html">
+          <img src="../../../../../../Documents/School/WEB/group19/FoodBook/Pic/home.png" alt="דף בית" height="60" />
+        </a>
+      </div>
+      <div class="logo">
+        <img id="logoImg" src="pic/Logo.png" height="200" />
+        <br />
+        <br />
+      </div>
+    </header>
+
+    <div class="category">
+      <button class="categoryBtn" data-category="diary">
+        <label>חלבי</label>
+        <img src="../../../../../../Documents/School/WEB/group19/FoodBook/Pic/חלבי.png" alt="חלבי" height="40" />
+      </button>
+      <button class="categoryBtn" data-category="meat">
+        בשרי
+        <img src="../../../../../../Documents/School/WEB/group19/FoodBook/Pic/בשר.png" alt="בשרי" height="40" />
+      </button>
+      <button class="categoryBtn" data-category="pastries">
+        מאפים
+        <img src="../../../../../../Documents/School/WEB/group19/FoodBook/Pic/מאפים.png" alt="מאפים" height="40" />
+      </button>
+      <button class="categoryBtn" data-category="desserts">
+        קינוחים
+        <img src="../../../../../../Documents/School/WEB/group19/FoodBook/Pic/קינוחים.png" alt="קינוחים" height="40" />
+      </button>
+    </div>
+    <div class="category">
+      <button class="categoryBtn" data-category="vegan">
+        טבעוני
+        <img src="../../../../../../Documents/School/WEB/group19/FoodBook/Pic/טבעוני.png" alt="טבעוני" height="40" />
+      </button>
+      <button class="categoryBtn" data-category="vegetarian">
+        צמחוני
+        <img src="../../../../../../Documents/School/WEB/group19/FoodBook/Pic/צמחוני.png" alt="צמחוני" height="40" />
+      </button>
+      <button class="categoryBtn" data-category="salads">
+        סלטים
+        <img src="../../../../../../Documents/School/WEB/group19/FoodBook/Pic/סלטים.png" alt="סלטים" height="40" />
+      </button>
+      <button class="categoryBtn" data-category="asian">
+        אסייתי
+        <img src="../../../../../../Documents/School/WEB/group19/FoodBook/Pic/אסייתי.png" alt="אסייתי" height="40" />
+      </button>
+    </div>
+    <div class="category">
+      <button class="categoryBtn" data-category="chiken">
+        עוף
+        <img src="../../../../../../Documents/School/WEB/group19/FoodBook/Pic/עוף.png" alt="עוף" height="40" />
+      </button>
+      <button class="categoryBtn" data-category="soup">
+        מרקים
+        <img src="../../../../../../Documents/School/WEB/group19/FoodBook/Pic/מרקים.png" alt="מרקים" height="40" />
+      </button>
+      <button class="categoryBtn" data-category="Sandwiches">
+        כריכים
+        <img src="../../../../../../Documents/School/WEB/group19/FoodBook/Pic/כריכים.png" alt="כריכים" height="40" />
+      </button>
+      <button class="categoryBtn" data-category="Extras">
+        תוספות
+        <img src="../../../../../../Documents/School/WEB/group19/FoodBook/Pic/תוספות.png" alt="תוספות" height="40" />
+      </button>
+    </div>
+    <section>
+      <h2>מומלצים</h2>
+      <div id="AllRecoRecipes"></div>
+    </section>
+  </body>
+</html>

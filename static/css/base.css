@@ -1,0 +1,22 @@
+
+body{
+     background-color: #FFF9E4;
+     text-align: center;
+     margin:0 auto;
+    }
+
+.logo{
+    text-align: center;
+    margin:0 auto;
+    }
+
+#logoImg {
+  animation: my-animation 2s ease-in-out infinite;
+  animation-iteration-count:1;
+}
+
+.navIcon{
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    }

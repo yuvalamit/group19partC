@@ -1,0 +1,10 @@
+
+.logo{
+    text-align: center;
+    margin:0 auto;
+    }
+
+#logoImg {
+  animation: my-animation 2s ease-in-out infinite;
+  animation-iteration-count:1;
+}

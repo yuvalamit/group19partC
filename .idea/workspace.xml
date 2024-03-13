@@ -5,11 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50402e2e-5c01-46fb-9e89-4bb28707d790" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/homepage/static/css/HomePage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/homepage/templates/HomePage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/main_logo/main_logo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/main_logo/static/css/main_logo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/main_logo/templates/main_logo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/main_nav/main_nav.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/main_nav/static/css/main_nav.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/main_nav/templates/main_nav.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +25,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Flask Main" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -49,7 +55,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "Adi",
-    "last_opened_file_path": "C:/Users/Louk/PycharmProjects/group19/group19partC",
+    "last_opened_file_path": "C:/Users/Louk/Downloads/Flask Skeleton Project",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -60,6 +66,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Louk\PycharmProjects\group19\group19partC\static\media" />
+      <recent name="C:\Users\Louk\PycharmProjects\group19\group19partC\components\main_nav\static\media" />
       <recent name="C:\Users\Louk\PycharmProjects\group19\group19partC\pages\homepage\static\css" />
       <recent name="C:\Users\Louk\PycharmProjects\group19\group19partC\pages\homepage\templates" />
     </key>
@@ -98,7 +106,7 @@
       <updated>1710085319168</updated>
       <workItem from="1710085346393" duration="182000" />
       <workItem from="1710086677001" duration="1694000" />
-      <workItem from="1710088483073" duration="2117000" />
+      <workItem from="1710088483073" duration="9784000" />
     </task>
     <servers />
   </component>

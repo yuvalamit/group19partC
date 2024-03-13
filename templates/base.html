@@ -1,30 +1,21 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>base</title>
-        <link rel="stylesheet" href="C:\Users\Louk\PycharmProjects\group19\group19partC\static\css\base.css" />
-
+    {% block page_head %}
+        <meta charset="UTF-8">
+        <title>{{ page_head_title_author|default('FoodBook', true) }}</title>
+        <base href="/"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" />
+    {% endblock %}
 </head>
 <body>
+{% block page_body_content %}
 <header>
-      <div class="navIcon">
-        <a href="../../../../../../Documents/School/WEB/group19/FoodBook/MyRecipes.html">
-          <img src="C:\Users\Louk\PycharmProjects\group19\group19partC\static\media\personal.png" alt="איזור אישי" height="60" />
-        </a>
-        <a href="../../../../../../Documents/School/WEB/group19/FoodBook/UpLoad.html">
-          <!-- TODO: להוסיף את הקישור להעלאת מתכון -->
-          <img src="C:\Users\Louk\PycharmProjects\group19\group19partC\static\media\upload.png" alt="העלאת מתכון" height="60" />
-        </a>
-        <a href="./HomePage.html">
-          <img src="C:\Users\Louk\PycharmProjects\group19\group19partC\static\media\home.png" alt="דף בית" height="60" />
-        </a>
-      </div>
-      <div class="logo">
-        <img id="logoImg" src="C:\Users\Louk\PycharmProjects\group19\group19partC\static\media\Logo.png" height="200" />
-        <br />
-        <br />
-      </div>
-    </header>
+    {% block body_header %}
+        {% include 'main_nav.html' %}
+        {% include 'main_logo.html' %}
+    {% endblock %}
+</header>
+
 </body>
 </html>

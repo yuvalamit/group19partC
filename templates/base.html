@@ -3,9 +3,9 @@
 <head>
     {% block page_head %}
         <meta charset="UTF-8">
-        <title>{{ page_head_title_author|default('FoodBook', true) }}</title>
+        <title>{{ page_head_title | default('FoodBook', true) }}</title>
         <base href="/"/>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}"/>
     {% endblock %}
 </head>
 <body>
@@ -16,6 +16,17 @@
         {% include 'main_logo.html' %}
     {% endblock %}
 </header>
+    {% block category_nav%}
+        {% endblock %}
+    {% block recepies_divs %}
+        {% endblock %}
+    {% block main_div %}
+        <div class="main_div_Block">
+        {% block main_div_content %}
 
+            {% endblock %}
+        </div>
+        {% endblock %}
+{% endblock %}
 </body>
 </html>

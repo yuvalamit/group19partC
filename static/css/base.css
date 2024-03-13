@@ -4,3 +4,10 @@ body{
      text-align: center;
      margin:0 auto;
     }
+
+.main_div_Block {
+    background-color: #E38B29;
+    border-radius: 20px;
+    padding: 25px 70px;
+    display: inline-block;
+}

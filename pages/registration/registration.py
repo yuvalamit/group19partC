@@ -5,5 +5,5 @@ registration = Blueprint('registration', __name__, static_folder='static', stati
 
 
 @registration.route('/registration')
-def home_page():
+def get_registration():
     return render_template('registration.html')

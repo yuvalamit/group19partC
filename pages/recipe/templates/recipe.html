@@ -1,0 +1,54 @@
+{% block head_css %}
+    <link rel="stylesheet" href="{{ url_for('recipe.static', filename='css/recipe.css') }}"/>
+{% endblock %}
+
+{% extends 'base.html' %}
+
+{% set page_head_title = 'recipe' %}
+
+{% block main_div %}
+ <div class="detailsBlock">
+      <div class="headDetails">
+        <h2 class="nameRecipe">{{ recipe.name }}</h2>
+        <h4 class="detailHead">קושי: {{ recipe.hardness }}</h4>
+        <br />
+        <h4 class="detailHead">משך זמן הכנה: {{ recipe.minutes }} דקות</h4>
+      </div>
+      <img src="static/media/{{ recipe.image }}" alt="{{ recipe.name }}" height="120" />
+    </div>
+
+    <br />
+
+    <div class="components">
+      <h2>רשימת מרכיבים:</h2>
+      <p class="componentsList">
+           {% for ingredient in recipe.ingredients %}
+               {{ ingredient }} <br/>
+          {% endfor %}
+      </p>
+    </div>
+
+    <div class="method">
+      <h2>אופן ההכנה:</h2>
+      <p class="process">
+          {{ recipe.instructions }}
+      </p>
+    </div>
+    <br />
+    <div class="commentBlock">
+      <h2 id="nameRecipe">תגובות:</h2>
+      <br />
+      <div id="commentsList"></div>
+      <form id="commentForm" action="." method="get">
+        <div class="inputComment">
+          <h4 class="comment">אני:</h4>
+          <input
+            type="text"
+            name="input_comment"
+            placeholder="הכנס את תגובתך"
+          />
+          <input class="commentButton" type="submit" value="הוסף" />
+        </div>
+      </form>
+    </div>
+{% endblock %}

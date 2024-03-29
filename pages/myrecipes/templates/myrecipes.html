@@ -1,0 +1,14 @@
+{% block head_css %}
+<link rel="stylesheet" href="{{ url_for('myrecipes.static', filename='css/myrecipes.css') }}"/>
+{% endblock %}
+
+{% extends 'base.html' %}
+
+{% set page_head_title = 'my recipes' %}
+
+{% block main_div %}
+<h4 id="helloUser">שלום, {{ first_name }}</h4>
+    <h2>המתכונים שלי...</h2>
+    <br />
+    <div id="AllRecipes"></div>
+{% endblock %}

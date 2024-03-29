@@ -3,5 +3,6 @@
 .navIcon{
     display: flex;
     flex-direction: row;
+    justify-content: start;
     margin-left: auto;
     }

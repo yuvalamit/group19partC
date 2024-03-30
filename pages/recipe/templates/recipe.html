@@ -7,48 +7,68 @@
 {% set page_head_title = 'recipe' %}
 
 {% block main_div %}
- <div class="detailsBlock">
-      <div class="headDetails">
-        <h2 class="nameRecipe">{{ recipe.name }}</h2>
-        <h4 class="detailHead">קושי: {{ recipe.hardness }}</h4>
-        <br />
-        <h4 class="detailHead">משך זמן הכנה: {{ recipe.minutes }} דקות</h4>
-      </div>
-      <img src="static/media/{{ recipe.image }}" alt="{{ recipe.name }}" height="120" />
+    <div class="detailsBlock">
+        <div class="headDetails">
+            <h2 class="nameRecipe">{{ recipe.name }}</h2>
+            <h4 class="detailHead">קושי: {{ recipe.hardness }}</h4>
+            <br/>
+            <h4 class="detailHead">משך זמן הכנה: {{ recipe.minutes }} דקות</h4>
+            <h4 class="detailHead">
+                {% if recipe.kosher %}
+                    כשר
+                {% else %}
+                    לא כשר
+                {% endif %}
+            </h4>
+        </div>
+        <img src="static/media/{{ recipe.image }}" alt="{{ recipe.name }}" height="120"/>
     </div>
 
-    <br />
+    <br/>
 
     <div class="components">
-      <h2>רשימת מרכיבים:</h2>
-      <p class="componentsList">
-           {% for ingredient in recipe.ingredients %}
-               {{ ingredient }} <br/>
-          {% endfor %}
-      </p>
+        <h2>רשימת מרכיבים:</h2>
+        <p class="componentsList">
+            {% for ingredient in recipe.ingredients %}
+                {{ ingredient }} <br/>
+            {% endfor %}
+        </p>
     </div>
 
     <div class="method">
-      <h2>אופן ההכנה:</h2>
-      <p class="process">
-          {{ recipe.instructions }}
-      </p>
+        <h2>אופן ההכנה:</h2>
+        <p class="process">
+            {{ recipe.instructions }}
+        </p>
     </div>
-    <br />
+    <br/>
     <div class="commentBlock">
-      <h2 id="nameRecipe">תגובות:</h2>
-      <br />
-      <div id="commentsList"></div>
-      <form id="commentForm" action="." method="get">
-        <div class="inputComment">
-          <h4 class="comment">אני:</h4>
-          <input
-            type="text"
-            name="input_comment"
-            placeholder="הכנס את תגובתך"
-          />
-          <input class="commentButton" type="submit" value="הוסף" />
+        <h2 id="nameRecipe">תגובות:</h2>
+        <br/>
+        <div id="commentsList">
+            {% for comment in recipe.comments %}
+                <div class="commentRow">
+                    <h4>{{ comment.name }}: {{ comment.comment }}</h4>
+                </div>
+            {% endfor %}
         </div>
-      </form>
+        {% if LoggedIn %}
+            <form id="commentForm" action="" method="POST">
+                <div class="inputComment">
+                    <h4 class="comment">אני:</h4>
+                    <input
+                            type="text"
+                            name="comment"
+                            placeholder="הכנס את תגובתך"
+                    />
+                    <input class="commentButton" type="submit" value="הוסף"/>
+                </div>
+            </form>
+        {% else %}
+            <h4 class="comment">יש <a href="/login">להתחבר</a> על מנת להגיב</h4>
+        {% endif %}
     </div>
+{% endblock %}
+{% block body_js_block %}
+    <script src="{{ url_for('recipe.static', filename='js/recipe.js') }}"></script>
 {% endblock %}

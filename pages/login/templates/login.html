@@ -8,39 +8,42 @@
 
 {% block main_div %}
     <div class="LogInBlock">
-      <h2>דף התחברות</h2>
-      <form action="" method="POST">
-        <div class="InputField">
-          <h4>מייל:</h4>
-          <input
-            id="email"
-            type="email"
-            name="email"
-            placeholder="הכנס מייל"
-            required
-          />
-        </div>
-        <div class="InputField">
-          <h4>סיסמא:</h4>
-          <input
-            id="password"
-            type="password"
-            name="password"
-            placeholder="הכנס סיסמא"
-            required
-          />
-        </div>
-        <h4>
-          עדיין אין לך משתמש? לחץ
-          <a href="Registration.html">כאן</a>
-        </h4>
-        <br />
-          {% if error %}
-           <h4 class="error-message">
-            שגיאת התחברות
-           </h4>
-          {% endif %}
-        <button class="loginB" type="submit">התחבר</button>
-      </form>
+        <h2>דף התחברות</h2>
+        <form action="" method="POST">
+            <div class="InputField">
+                <h4>מייל:</h4>
+                <input
+                        id="email"
+                        type="email"
+                        name="email"
+                        placeholder="הכנס מייל"
+                        required
+                />
+            </div>
+            <div class="InputField">
+                <h4>סיסמא:</h4>
+                <input
+                        id="password"
+                        type="password"
+                        name="password"
+                        placeholder="הכנס סיסמא"
+                        required
+                />
+            </div>
+            <h4>
+                עדיין אין לך משתמש? לחץ
+                <a href="/registration">כאן</a>
+            </h4>
+            <br/>
+            {% if error %}
+                <h4 class="error-message">
+                    שגיאת התחברות
+                </h4>
+            {% endif %}
+            <button class="loginB" type="submit">התחבר</button>
+        </form>
     </div>
+{% endblock %}
+{% block body_js_block %}
+    <script src="{{ url_for('login.static', filename='js/login.js') }}"></script>
 {% endblock %}

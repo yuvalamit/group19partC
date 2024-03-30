@@ -1,5 +1,5 @@
 {% block head_css %}
-<link rel="stylesheet" href="{{ url_for('myrecipes.static', filename='css/myrecipes.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('myrecipes.static', filename='css/myrecipes.css') }}"/>
 {% endblock %}
 
 {% extends 'base.html' %}
@@ -10,5 +10,15 @@
 <h4 id="helloUser">שלום, {{ first_name }}</h4>
     <h2>המתכונים שלי...</h2>
     <br />
-    <div id="AllRecipes"></div>
+    <div id="AllRecipes">
+    {% for recipe in recipes %}
+        <div class="recipe">
+            <h3>{{ recipe.name }}</h3>
+            <a href="/recipe/{{ recipe._id }}">
+                <img src="static/media/{{ recipe.image }}" alt="{{ recipe.name }}" class="recipeImage">
+            </a>
+            <h4>{{ recipe.hardness }} | {{ recipe.minutes }} דקות</h4>
+        </div>
+    {% endfor %}
+    </div>
 {% endblock %}

@@ -2,16 +2,18 @@
 
 <div class="navIcon">
     {% if LoggedIn %}
-    <a href="/logout">
-        <img src="static/media/logout.png" alt="התנתקות" height="60" />
-    </a>
+        <a href="/logout">
+            <img src="static/media/logout.png" alt="התנתקות" height="60" />
+        </a>
     {% endif %}
     <a href="/myrecipes">
         <img src="static/media/personal.png" alt="איזור אישי" height="60" />
     </a>
-    <a href="/upload">
-        <img src="static/media/upload.png" alt="העלאת מתכון" height="60" />
-    </a>
+    {% if LoggedIn %}
+        <a href="/upload">
+            <img src="static/media/upload.png" alt="העלאת מתכון" height="60" />
+        </a>
+    {% endif %}
     <a href="/">
         <img src="static/media/home.png" alt="דף בית" height="60" />
     </a>

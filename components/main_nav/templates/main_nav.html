@@ -1,10 +1,15 @@
+<link rel="stylesheet" href="{{ url_for('main_nav.static', filename='css/main_nav.css') }}"/>
 
 <div class="navIcon">
-    <a href="/">
+    {% if LoggedIn %}
+    <a href="/logout">
+        <img src="static/media/logout.png" alt="התנתקות" height="60" />
+    </a>
+    {% endif %}
+    <a href="/myrecipes">
         <img src="static/media/personal.png" alt="איזור אישי" height="60" />
     </a>
-    <a href="/">
-        <!-- TODO: להוסיף את הקישור להעלאת מתכון -->
+    <a href="/upload">
         <img src="static/media/upload.png" alt="העלאת מתכון" height="60" />
     </a>
     <a href="/">

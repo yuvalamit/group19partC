@@ -1,0 +1,114 @@
+<link rel="stylesheet" href="{{ url_for('upload.static', filename='css/upload.css') }}"/>
+
+{% extends 'base.html' %}
+
+{% set page_head_title = 'upload' %}
+
+{% block main_div %}
+    <div class="UpLoadBlock">
+      <h2>העלאת מתכון:</h2>
+      <form action="" method="get">
+        <div class="InputField">
+          <h4>שם המתכון:</h4>
+          <input id="NAME" type="text" name="nameRec" required />
+        </div>
+
+        <div class="InputField">
+          <h4>רשימת מרכיבים:</h4>
+          <h4>(יש לרדת שורה בין מרכיב למרכיב)</h4>
+          <textarea id="INGR" name="ingredients" required></textarea>
+        </div>
+
+        <div class="InputField">
+          <h4>תוכן המתכון:</h4>
+          <textarea id="INST" name="instructions" required></textarea>
+        </div>
+
+        <div class="InputField">
+          <h4>רמת קושי:</h4>
+          <select id="HARD" type="hardness" name="hardness" required>
+            <option value="">בחר דרגת קושי</option>
+            <option value="easy">קל</option>
+            <option value="medium">בינוני</option>
+            <option value="hard">קשה</option>
+          </select>
+        </div>
+
+        <div class="InputField">
+          <h4>משך זמן הכנה בדקות:</h4>
+          <input id="NUM" type="number" name="minutes" min="1" required />
+        </div>
+
+        <div class="InputField">
+          <h4>האם כשר?</h4>
+          <input id="KOSH" type="checkbox" name="kosher" />
+        </div>
+
+        <div class="InputField">
+          <h4>העלה תמונה:</h4>
+          <input id="PHOT" type="file" name="photo" required />
+        </div>
+
+        <div class="InputField">
+          <h4>קטגוריה 1:</h4>
+          <select id="CAT1" type="category1" name="category1" required>
+            <option value="">בחר קטגוריה</option>
+            <option value="חלבי">חלבי</option>
+            <option value="בשרי">בשרי</option>
+            <option value="צמחוני">צמחוני</option>
+            <option value="טבעוני">טבעוני</option>
+            <option value="קינוחים">קינוחים</option>
+            <option value="מאפים">מאפים</option>
+            <option value="אסייתי">אסייתי</option>
+            <option value="סלטים">סלטים</option>
+            <option value="כריכים">כריכים</option>
+            <option value="מרקים">מרקים</option>
+            <option value="תוספות">תוספות</option>
+            <option value="עוף">עוף</option>
+          </select>
+        </div>
+
+        <div class="InputField">
+          <h4>קטגוריה 2:</h4>
+          <select id="CAT2" type="category2" name="category2">
+            <option value="">בחר קטגוריה</option>
+            <option value="חלבי">חלבי</option>
+            <option value="בשרי">בשרי</option>
+            <option value="צמחוני">צמחוני</option>
+            <option value="טבעוני">טבעוני</option>
+            <option value="קינוחים">קינוחים</option>
+            <option value="מאפים">מאפים</option>
+            <option value="אסייתי">אסייתי</option>
+            <option value="סלטים">סלטים</option>
+            <option value="כריכים">כריכים</option>
+            <option value="מרקים">מרקים</option>
+            <option value="תוספות">תוספות</option>
+            <option value="עוף">עוף</option>
+          </select>
+        </div>
+
+        <div class="InputField">
+          <h4>קטגוריה 3:</h4>
+          <select id="CAT3" type="category3" name="category3">
+            <option value="">בחר קטגוריה</option>
+            <option value="חלבי">חלבי</option>
+            <option value="בשרי">בשרי</option>
+            <option value="צמחוני">צמחוני</option>
+            <option value="טבעוני">טבעוני</option>
+            <option value="קינוחים">קינוחים</option>
+            <option value="מאפים">מאפים</option>
+            <option value="אסייתי">אסייתי</option>
+            <option value="סלטים">סלטים</option>
+            <option value="כריכים">כריכים</option>
+            <option value="מרקים">מרקים</option>
+            <option value="תוספות">תוספות</option>
+            <option value="עוף">עוף</option>
+          </select>
+        </div>
+
+        <br />
+        <input class="loginB" type="submit" value="העלה" />
+      </form>
+      <script src="UpLoad.js"></script>
+    </div>
+{% endblock %}

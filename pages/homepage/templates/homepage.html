@@ -1,5 +1,9 @@
 <link rel="stylesheet" href="{{ url_for('homepage.static', filename='css/homepage.css') }}"/>
 
+ <script type="text/javascript">
+        var all_recipes = "{{ all_recipes }}";
+    </script>
+ <script src="{{ url_for('homepage.static', filename='js/homepage.js') }}"></script>
 
 {% extends 'base.html' %}
 
@@ -43,7 +47,7 @@
       </button>
     </div>
     <div class="category">
-      <button class="categoryBtn" data-category="chiken">
+      <button class="categoryBtn" data-category="chicken">
         עוף
         <img src="static/media/עוף.png" alt="עוף" height="40" />
       </button>
@@ -62,5 +66,16 @@
     </div>
         {% endblock %}
 
- {% block main_div %}
+{% block main_div %}
+     <div id="AllRecoRecipes">
+        {% for recipe in all_recipes %}
+          <div class="recipe">
+            <h3>{{ recipe.name }}</h3>
+            <a href="/recipe/{{ recipe._id }}">
+              <img src="static/media/{{ recipe.image }}" alt="{{ recipe.name }}" class="recipeImage">
+            </a>
+            <h4>{{ recipe.hardness }} | {{ recipe.minutes }} דקות</h4>
+          </div>
+        {% endfor %}
+     </div>
 {% endblock %}

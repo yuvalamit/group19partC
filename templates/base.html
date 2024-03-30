@@ -7,6 +7,7 @@
         <base href="/"/>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}"/>
     {% endblock %}
+    {% block head_css %}{% endblock %}
 </head>
 <body>
 {% block page_body_content %}
@@ -18,8 +19,6 @@
 </header>
     {% block category_nav%}
         {% endblock %}
-    {% block recepies_divs %}
-        {% endblock %}
     {% block main_div %}
         <div class="main_div_Block">
         {% block main_div_content %}
@@ -27,6 +26,6 @@
             {% endblock %}
         </div>
         {% endblock %}
-{% endblock %}
+    {% endblock %}
 </body>
 </html>

@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, session, redirect
 from utils.db_connector import *
+from utils.session import set_session
 
 login = Blueprint('login', __name__, static_folder='static', static_url_path='/pages/login',
                   template_folder='templates')
@@ -26,11 +27,8 @@ def post_login():
         password = request.form['password']
         user = find_user(email)
         if not user or user['password'] != password:
-            print('error login')
+            # error login
             return render_template('login.html', error='invalid')
-        print('login success')
-        session['email'] = email
-        session['userId'] = str(user['_id'])
-        session['loggedIn'] = True
-        session['firstName'] = user['firstName']
+        # login success
+        set_session(email)
         return redirect('/myrecipes')

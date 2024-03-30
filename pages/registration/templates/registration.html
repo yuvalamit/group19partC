@@ -1,102 +1,112 @@
-<link rel="stylesheet" href="{{ url_for('registration.static', filename='css/registration.css') }}"/>
+{% block head_css %}
+    <link rel="stylesheet" href="{{ url_for('registration.static', filename='css/registration.css') }}"/>
+{% endblock %}
 
 {% extends 'base.html' %}
 
 {% set page_head_title = 'registration' %}
 
 {% block main_div %}
-        <div class="regiBlock">
-      <h2>הרשמה</h2>
-      <form id="regiform" action="." method="get">
-        <div class="inputsField">
-          <h4>מייל:</h4>
-          <input type="email" name="input_email" required />
-        </div>
-        <div class="inputsField">
-          <h4>סיסמא:</h4>
-          <input type="password" name="input_password" required />
-        </div>
-        <div class="inputsField">
-          <h4>אימות סיסמא:</h4>
-          <input type="password" name="confirm_password" required />
-        </div>
-        <div class="inputsField">
-          <h4>שם פרטי:</h4>
-          <input type="text" name="first_name" required />
-        </div>
-        <div class="inputsField">
-          <h4>שם משפחה:</h4>
-          <input type="text" name="last_name" required />
-        </div>
-        <div class="inputsField">
-          <h4>עיר:</h4>
-          <select name="city" id="city" required>
-            <option value="">בחר עיר</option>
-            <option value="אום אל-פחם">אום אל-פחם</option>
-            <option value="אופקים">אופקים</option>
-            <option value="אור יהודה">אור יהודה</option>
-            <option value="אור עקיבא">אור עקיבא</option>
-            <option value="אילת">אילת</option>
-            <option value="אלעד">אלעד</option>
-            <option value="אריאל">אריאל</option>
-            <option value="אשדוד">אשדוד</option>
-            <option value="אשקלון">אשקלון</option>
-            <option value="באקה אל-גרבייה">באקה אל-גרבייה</option>
-            <option value="באר שבע">באר שבע</option>
-            <option value="בית שאן">בית שאן</option>
-            <option value="בית שמש">בית שמש</option>
-            <option value="ביתר עילית">ביתר עילית</option>
-            <option value="בני ברק">בני ברק</option>
-            <option value="בת ים">בת ים</option>
-            <option value="גבעת שמואל">גבעת שמואל</option>
-            <option value="גבעתיים">גבעתיים</option>
-            <option value="דימונה">דימונה</option>
-            <option value="הוד השרון">הוד השרון</option>
-            <option value="הרצליה">הרצליה</option>
-            <option value="חדרה">חדרה</option>
-            <option value="חולון">חולון</option>
-            <option value="חיפה">חיפה</option>
-            <option value="טבריה">טבריה</option>
-            <option value="טייבה">טייבה</option>
-            <option value="טירה">טירה</option>
-            <option value="טירת כרמל">טירת כרמל</option>
-            <option value="טמרה">טמרה</option>
-            <option value="יבנה">יבנה</option>
-            <option value="יהוד-מונוסון">יהוד-מונוסון</option>
-            <option value="יקנעם עילית">יקנעם עילית</option>
-            <option value="ירושלים">ירושלים</option>
-            <option value="כפר יונה">כפר יונה</option>
-            <option value="כפר סבא">כפר סבא</option>
-            <option value="כפר קאסם">כפר קאסם</option>
-            <option value="כרמיאל">כרמיאל</option>
-            <option value="לוד">לוד</option>
-            <option value="מגדל העמק">מגדל העמק</option>
-            <option value="מודיעין-מכבים-רעות">מודיעין-מכבים-רעות</option>
-            <option value="מודיעין עילית">מודיעין עילית</option>
-            <option value="מעלה אדומים">מעלה אדומים</option>
-            <option value="מעלות-תרשיחא">מעלות-תרשיחא</option>
-            <option value="נהריה">נהריה</option>
-            <option value="נוף הגליל">נוף הגליל</option>
-            <option value="נס ציונה">נס ציונה</option>
-            <option value="נצרת">נצרת</option>
-            <option value="נשר">נשר</option>
-            <option value="נתיבות">נתיבות</option>
-            <option value="נתניה">נתניה</option>
-          </select>
-        </div>
-        <div class="inputsField">
-          <h4>תאריך לידה:</h4>
-          <input
-            type="date"
-            name="birthdate"
-            id="birthdate"
-            max="2006-01-01"
-            required
-          />
-        </div>
-        <br />
-        <br />
-        <input class="regiButton" type="submit" value="הרשם" />
-      </form>
+    <div class="regiBlock">
+        <h2>הרשמה</h2>
+        <form id="regiform" action="" method="POST">
+            <div class="inputsField">
+                <h4>מייל:</h4>
+                <input type="email" name="email" required/>
+            </div>
+            <div class="inputsField">
+                <h4>סיסמא:</h4>
+                <input type="password" name="password" required/>
+            </div>
+            <div class="inputsField">
+                <h4>אימות סיסמא:</h4>
+                <input type="password" name="confirm_password" required/>
+            </div>
+            <div class="inputsField">
+                <h4>שם פרטי:</h4>
+                <input type="text" name="first_name" required/>
+            </div>
+            <div class="inputsField">
+                <h4>שם משפחה:</h4>
+                <input type="text" name="last_name" required/>
+            </div>
+            <div class="inputsField">
+                <h4>עיר:</h4>
+                <select name="city" id="city" required>
+                    <option value="">בחר עיר</option>
+                    <option value="אום אל-פחם">אום אל-פחם</option>
+                    <option value="אופקים">אופקים</option>
+                    <option value="אור יהודה">אור יהודה</option>
+                    <option value="אור עקיבא">אור עקיבא</option>
+                    <option value="אילת">אילת</option>
+                    <option value="אלעד">אלעד</option>
+                    <option value="אריאל">אריאל</option>
+                    <option value="אשדוד">אשדוד</option>
+                    <option value="אשקלון">אשקלון</option>
+                    <option value="באקה אל-גרבייה">באקה אל-גרבייה</option>
+                    <option value="באר שבע">באר שבע</option>
+                    <option value="בית שאן">בית שאן</option>
+                    <option value="בית שמש">בית שמש</option>
+                    <option value="ביתר עילית">ביתר עילית</option>
+                    <option value="בני ברק">בני ברק</option>
+                    <option value="בת ים">בת ים</option>
+                    <option value="גבעת שמואל">גבעת שמואל</option>
+                    <option value="גבעתיים">גבעתיים</option>
+                    <option value="דימונה">דימונה</option>
+                    <option value="הוד השרון">הוד השרון</option>
+                    <option value="הרצליה">הרצליה</option>
+                    <option value="חדרה">חדרה</option>
+                    <option value="חולון">חולון</option>
+                    <option value="חיפה">חיפה</option>
+                    <option value="טבריה">טבריה</option>
+                    <option value="טייבה">טייבה</option>
+                    <option value="טירה">טירה</option>
+                    <option value="טירת כרמל">טירת כרמל</option>
+                    <option value="טמרה">טמרה</option>
+                    <option value="יבנה">יבנה</option>
+                    <option value="יהוד-מונוסון">יהוד-מונוסון</option>
+                    <option value="יקנעם עילית">יקנעם עילית</option>
+                    <option value="ירושלים">ירושלים</option>
+                    <option value="כפר יונה">כפר יונה</option>
+                    <option value="כפר סבא">כפר סבא</option>
+                    <option value="כפר קאסם">כפר קאסם</option>
+                    <option value="כרמיאל">כרמיאל</option>
+                    <option value="לוד">לוד</option>
+                    <option value="מגדל העמק">מגדל העמק</option>
+                    <option value="מודיעין-מכבים-רעות">מודיעין-מכבים-רעות</option>
+                    <option value="מודיעין עילית">מודיעין עילית</option>
+                    <option value="מעלה אדומים">מעלה אדומים</option>
+                    <option value="מעלות-תרשיחא">מעלות-תרשיחא</option>
+                    <option value="נהריה">נהריה</option>
+                    <option value="נוף הגליל">נוף הגליל</option>
+                    <option value="נס ציונה">נס ציונה</option>
+                    <option value="נצרת">נצרת</option>
+                    <option value="נשר">נשר</option>
+                    <option value="נתיבות">נתיבות</option>
+                    <option value="נתניה">נתניה</option>
+                </select>
+            </div>
+            <div class="inputsField">
+                <h4>תאריך לידה:</h4>
+                <input
+                        type="date"
+                        name="birth_date"
+                        id="birthdate"
+                        max="2006-01-01"
+                        required
+                />
+            </div>
+            <br/>
+            <br/>
+            {% if error %}
+                <h4 class="error-message">
+                    שגיאת הרשמה
+                </h4>
+            {% endif %}
+            <input class="regiButton" type="submit" value="הרשם"/>
+        </form>
     </div>
+{% endblock %}
+{% block body_js_block %}
+    <script src="{{ url_for('registration.static', filename='js/register.js') }}"></script>
 {% endblock %}

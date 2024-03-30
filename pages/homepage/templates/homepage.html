@@ -1,81 +1,33 @@
-<link rel="stylesheet" href="{{ url_for('homepage.static', filename='css/homepage.css') }}"/>
-
- <script type="text/javascript">
-        var all_recipes = "{{ all_recipes }}";
-    </script>
- <script src="{{ url_for('homepage.static', filename='js/homepage.js') }}"></script>
+{% block head_css %}
+    <link rel="stylesheet" href="{{ url_for('homepage.static', filename='css/homepage.css') }}"/>
+{% endblock %}
 
 {% extends 'base.html' %}
 
 {% set page_head_title = 'Homepage' %}
 
-{% block category_nav%}
+{% block category_nav %}
     <div class="category">
-      <button class="categoryBtn" data-category="diary">
-        <label>חלבי</label>
-        <img src="static/media/חלבי.png" alt="חלבי" height="40" />
-      </button>
-      <button class="categoryBtn" data-category="meat">
-        בשרי
-        <img src="static/media/בשר.png" alt="בשרי" height="40" />
-      </button>
-      <button class="categoryBtn" data-category="pastries">
-        מאפים
-        <img src="static/media/מאפים.png" alt="מאפים" height="40" />
-      </button>
-      <button class="categoryBtn" data-category="desserts">
-        קינוחים
-        <img src="static/media/קינוחים.png" alt="קינוחים" height="40" />
-      </button>
+        {% for category in categories %}
+            <a class="categoryBtn" href="/category/{{ category.name }}">
+                <label>{{ category.label }}</label>
+                <img src="static/media/{{ category.image }}" alt="{{ category.label }}" height="40"/>
+            </a>
+        {% endfor %}
+
     </div>
-    <div class="category">
-      <button class="categoryBtn" data-category="vegan">
-        טבעוני
-        <img src="static/media/טבעוני.png" alt="טבעוני" height="40" />
-      </button>
-      <button class="categoryBtn" data-category="vegetarian">
-        צמחוני
-        <img src="static/media/צמחוני.png" alt="צמחוני" height="40" />
-      </button>
-      <button class="categoryBtn" data-category="salads">
-        סלטים
-        <img src="static/media/סלטים.png" alt="סלטים" height="40" />
-      </button>
-      <button class="categoryBtn" data-category="asian">
-        אסייתי
-        <img src="static/media/אסייתי.png" alt="אסייתי" height="40" />
-      </button>
-    </div>
-    <div class="category">
-      <button class="categoryBtn" data-category="chicken">
-        עוף
-        <img src="static/media/עוף.png" alt="עוף" height="40" />
-      </button>
-      <button class="categoryBtn" data-category="soup">
-        מרקים
-        <img src="static/media/מרקים.png" alt="מרקים" height="40" />
-      </button>
-      <button class="categoryBtn" data-category="Sandwiches">
-        כריכים
-        <img src="static/media/כריכים.png" alt="כריכים" height="40" />
-      </button>
-      <button class="categoryBtn" data-category="Extras">
-        תוספות
-        <img src="static/media/תוספות.png" alt="תוספות" height="40" />
-      </button>
-    </div>
-        {% endblock %}
+{% endblock %}
 
 {% block main_div %}
-     <div id="AllRecoRecipes">
+    <div id="AllRecoRecipes">
         {% for recipe in all_recipes %}
-          <div class="recipe">
-            <h3>{{ recipe.name }}</h3>
-            <a href="/recipe/{{ recipe._id }}">
-              <img src="static/media/{{ recipe.image }}" alt="{{ recipe.name }}" class="recipeImage">
-            </a>
-            <h4>{{ recipe.hardness }} | {{ recipe.minutes }} דקות</h4>
-          </div>
+            <div class="recipe">
+                <h3>{{ recipe.name }}</h3>
+                <a href="/recipe/{{ recipe._id }}">
+                    <img src="static/media/{{ recipe.image }}" alt="{{ recipe.name }}" class="recipeImage">
+                </a>
+                <h4>{{ recipe.hardness }} | {{ recipe.minutes }} דקות</h4>
+            </div>
         {% endfor %}
-     </div>
+    </div>
 {% endblock %}

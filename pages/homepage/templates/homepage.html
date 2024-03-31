@@ -7,9 +7,12 @@
 {% set page_head_title = 'Homepage' %}
 
 {% block category_nav %}
+    {% set last_segment = request.path.split('/')[-1] %}
+
     <div class="category">
         {% for category in categories %}
-            <a class="categoryBtn" href="/category/{{ category.name }}">
+            <a class="categoryBtn {% if last_segment==category.name %} active {% endif %}"
+               href="/category/{{ category.name }}">
                 <label>{{ category.label }}</label>
                 <img src="static/media/{{ category.image }}" alt="{{ category.label }}" height="40"/>
             </a>

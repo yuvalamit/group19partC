@@ -1,4 +1,4 @@
-.regiBlock{
+.regiBlock {
     background-color: #E38B29;
     border-radius: 20px;
     padding: 25px 70px;
@@ -6,7 +6,7 @@
 }
 
 
-.regiButton{
+.regiButton {
     background-color: #FFDA77;
     color: #E38B29;
     font-weight: bold;
@@ -15,12 +15,12 @@
     border-color: #FFDA77;
 }
 
-h2{
+h2 {
     color: #FFF9E4;
     margin: 0;
 }
 
-h4{
+h4 {
     color: #FFF9E4;
     font-size: 15px;
     margin: 5px;

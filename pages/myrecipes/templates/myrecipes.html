@@ -7,18 +7,18 @@
 {% set page_head_title = 'my recipes' %}
 
 {% block main_div %}
-<h4 id="helloUser">שלום, {{ first_name }}</h4>
+    <h4 id="helloUser">שלום, {{ first_name }}</h4>
     <h2>המתכונים שלי...</h2>
-    <br />
+    <br/>
     <div id="AllRecipes">
-    {% for recipe in recipes %}
-        <div class="recipe">
-            <h3>{{ recipe.name }}</h3>
-            <a href="/recipe/{{ recipe._id }}">
-                <img src="static/media/{{ recipe.image }}" alt="{{ recipe.name }}" class="recipeImage">
-            </a>
-            <h4>{{ recipe.hardness }} | {{ recipe.minutes }} דקות</h4>
-        </div>
-    {% endfor %}
+        {% for recipe in recipes %}
+            <div class="recipe">
+                <h3>{{ recipe.name }}</h3>
+                <a href="/recipe/{{ recipe._id }}">
+                    <img src="static/media/{{ recipe.image }}" alt="{{ recipe.name }}" class="recipeImage">
+                </a>
+                <h4>{{ recipe.hardness }} | {{ recipe.minutes }} דקות</h4>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}

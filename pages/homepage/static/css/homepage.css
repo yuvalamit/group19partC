@@ -17,7 +17,7 @@
     font-size: 15px;
     border-radius: 10px;
     border-color: #FFDA77;
-    width: calc(25% - 10px);
+    width: calc(22% - 10px);
     height: 40px;
     display: flex;
     flex-direction: row;
@@ -26,6 +26,10 @@
     margin: 5px 5px 5px 5px;
     text-decoration: none;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.categoryBtn.active, .categoryBtn:hover {
+    border: 2px solid #ee7215;
 }
 
 .recipe h3 {
@@ -48,12 +52,15 @@
     background-color: #E38B29;
     padding: 10px;
     border-radius: 20px;
-    margin: 0 1% 0 1%;
+    margin: 0 1% 20px 1%;
 }
 
 .recipeImage {
     height: 220px;
+    width: 220px;
+
 }
+
 
 @media (max-width: 1000px) and (min-width: 600px) {
     .recipeImage {

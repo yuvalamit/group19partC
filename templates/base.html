@@ -11,22 +11,22 @@
 </head>
 <body>
 {% block page_body_content %}
-<header>
-    {% block body_header %}
-        {% include 'main_nav.html' %}
-        {% include 'main_logo.html' %}
-    {% endblock %}
-</header>
-    {% block category_nav%}
+    <header>
+        {% block body_header %}
+            {% include 'main_nav.html' %}
+            {% include 'main_logo.html' %}
         {% endblock %}
+    </header>
+    {% block category_nav %}
+    {% endblock %}
     {% block main_div %}
         <div class="main_div_Block">
-        {% block main_div_content %}
+            {% block main_div_content %}
 
             {% endblock %}
         </div>
-        {% endblock %}
     {% endblock %}
-    {% block body_js_block %}{% endblock %}
+{% endblock %}
+{% block body_js_block %}{% endblock %}
 </body>
 </html>

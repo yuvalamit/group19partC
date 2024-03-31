@@ -13,6 +13,7 @@
             <h4 class="detailHead">קושי: {{ recipe.hardness }}</h4>
             <br/>
             <h4 class="detailHead">משך זמן הכנה: {{ recipe.minutes }} דקות</h4>
+            <br>
             <h4 class="detailHead">
                 {% if recipe.kosher %}
                     כשר
@@ -53,7 +54,7 @@
             {% endfor %}
         </div>
         {% if LoggedIn %}
-            <form id="commentForm" action="" method="POST">
+            <form id="commentForm" action="/recipe" method="POST">
                 <div class="inputComment">
                     <h4 class="comment">אני:</h4>
                     <input

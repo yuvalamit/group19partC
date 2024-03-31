@@ -8,81 +8,81 @@
 
 {% block main_div %}
     <div class="UpLoadBlock">
-      <h2>העלאת מתכון:</h2>
-      <form action="" method="POST" enctype="multipart/form-data">
-        <div class="InputField">
-          <h4>שם המתכון:</h4>
-          <input id="NAME" type="text" name="name" required />
-        </div>
+        <h2>העלאת מתכון:</h2>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <div class="InputField">
+                <h4>שם המתכון:</h4>
+                <input id="NAME" type="text" name="name" required/>
+            </div>
 
-        <div class="InputField">
-          <h4>רשימת מרכיבים:</h4>
-          <h4>(יש לרדת שורה בין מרכיב למרכיב)</h4>
-          <textarea id="INGR" name="ingredients" required></textarea>
-        </div>
+            <div class="InputField">
+                <h4>רשימת מרכיבים:</h4>
+                <h4>(יש לרדת שורה בין מרכיב למרכיב)</h4>
+                <textarea id="INGR" name="ingredients" required></textarea>
+            </div>
 
-        <div class="InputField">
-          <h4>תוכן המתכון:</h4>
-          <textarea id="INST" name="instructions" required></textarea>
-        </div>
+            <div class="InputField">
+                <h4>תוכן המתכון:</h4>
+                <textarea id="INST" name="instructions" required></textarea>
+            </div>
 
-        <div class="InputField">
-          <h4>רמת קושי:</h4>
-          <select id="HARD" name="hardness" required>
-            <option value="">בחר דרגת קושי</option>
-            <option value="קל">קל</option>
-            <option value="בינוני">בינוני</option>
-            <option value="קשה">קשה</option>
-          </select>
-        </div>
+            <div class="InputField">
+                <h4>רמת קושי:</h4>
+                <select id="HARD" name="hardness" required>
+                    <option value="">בחר דרגת קושי</option>
+                    <option value="קל">קל</option>
+                    <option value="בינוני">בינוני</option>
+                    <option value="קשה">קשה</option>
+                </select>
+            </div>
 
-        <div class="InputField">
-          <h4>משך זמן הכנה בדקות:</h4>
-          <input id="NUM" type="number" name="minutes" min="1" required />
-        </div>
+            <div class="InputField">
+                <h4>משך זמן הכנה בדקות:</h4>
+                <input id="NUM" type="number" name="minutes" min="1" required/>
+            </div>
 
-        <div class="InputField">
-          <h4>האם כשר?</h4>
-          <input id="KOSH" type="checkbox" name="kosher" />
-        </div>
+            <div class="InputField">
+                <h4>האם כשר?</h4>
+                <input id="KOSH" type="checkbox" name="kosher"/>
+            </div>
 
-        <div class="InputField">
-          <h4>העלה תמונה:</h4>
-          <input id="PHOT" type="file" name="photo" required />
-        </div>
+            <div class="InputField">
+                <h4>העלה תמונה:</h4>
+                <input id="PHOT" type="file" name="photo" required/>
+            </div>
 
-        <div class="InputField">
-          <h4>קטגוריה 1:</h4>
-          <select id="CAT1" name="category1" required>
-              <option value="">בחר קטגוריה</option>
-              {% for category in categories %}
-                <option value="{{ category._id }}">{{ category.label }}</option>
-              {% endfor %}
-          </select>
-        </div>
+            <div class="InputField">
+                <h4>קטגוריה 1:</h4>
+                <select id="CAT1" name="category1" required>
+                    <option value="">בחר קטגוריה</option>
+                    {% for category in categories %}
+                        <option value="{{ category._id }}">{{ category.label }}</option>
+                    {% endfor %}
+                </select>
+            </div>
 
-        <div class="InputField">
-          <h4>קטגוריה 2:</h4>
-          <select id="CAT2" name="category2">
-            <option value="">בחר קטגוריה</option>
-            {% for category in categories %}
-                <option value="{{ category._id }}">{{ category.label }}</option>
-              {% endfor %}
-          </select>
-        </div>
+            <div class="InputField">
+                <h4>קטגוריה 2:</h4>
+                <select id="CAT2" name="category2">
+                    <option value="">בחר קטגוריה</option>
+                    {% for category in categories %}
+                        <option value="{{ category._id }}">{{ category.label }}</option>
+                    {% endfor %}
+                </select>
+            </div>
 
-        <div class="InputField">
-          <h4>קטגוריה 3:</h4>
-          <select id="CAT3"  name="category3">
-            <option value="">בחר קטגוריה</option>
-            {% for category in categories %}
-                <option value="{{ category._id }}">{{ category.label }}</option>
-              {% endfor %}
-          </select>
-        </div>
+            <div class="InputField">
+                <h4>קטגוריה 3:</h4>
+                <select id="CAT3" name="category3">
+                    <option value="">בחר קטגוריה</option>
+                    {% for category in categories %}
+                        <option value="{{ category._id }}">{{ category.label }}</option>
+                    {% endfor %}
+                </select>
+            </div>
 
-        <br />
-        <input class="loginB" type="submit" value="העלה" />
-      </form>
+            <br/>
+            <input class="loginB" type="submit" value="העלה"/>
+        </form>
     </div>
 {% endblock %}

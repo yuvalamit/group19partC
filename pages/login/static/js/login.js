@@ -7,7 +7,7 @@ window.onload = function () {
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
 
-        if(!email || !password || password.length < 6){
+        if (!email || !password || password.length < 6) {
             alert('יש למלא את כלל השדות להתחברות');
             return false; // prevent sent to server login
         }

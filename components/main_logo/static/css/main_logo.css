@@ -1,29 +1,29 @@
 
-.logo{
+.logo {
     text-align: center;
-    margin:0 auto;
-    }
+    margin: 0 auto;
+}
 
 #logoImg {
-  animation: my-animation 2s ease-in-out infinite;
-  animation-iteration-count:1;
+    animation: my-animation 2s ease-in-out infinite;
+    animation-iteration-count: 1;
 }
 
 @keyframes my-animation {
-  0% {
-    opacity: 0;
-    transform: rotate(-30deg);
-  }
-  33.333% {
-    opacity: 0.5;
-    transform: rotate(0deg);
-  }
- 66.666% {
-    opacity: 1;
-    transform: rotate(30deg);
-  }
-  100% {
-    opacity: 1.5;
-    transform: rotate(0deg);
-  }
+    0% {
+        opacity: 0;
+        transform: rotate(-30deg);
+    }
+    33.333% {
+        opacity: 0.5;
+        transform: rotate(0deg);
+    }
+    66.666% {
+        opacity: 1;
+        transform: rotate(30deg);
+    }
+    100% {
+        opacity: 1.5;
+        transform: rotate(0deg);
+    }
 }

@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, session
+from flask import Blueprint, render_template, session, request
 
 from utils.db_connector import *
 from utils.session import session_logged_in

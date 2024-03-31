@@ -4,7 +4,7 @@ from utils.db_connector import get_user_recipes
 from utils.session import session_logged_in
 
 myrecipes = Blueprint('myrecipes', __name__, static_folder='static', static_url_path='/pages/myrecipes',
-                     template_folder='templates')
+                      template_folder='templates')
 
 
 @myrecipes.route('/myrecipes')

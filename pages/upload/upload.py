@@ -26,10 +26,17 @@ def post_upload():
         hardness = request.form['hardness']
         minutes = request.form['minutes']
         kosher = request.form.get('kosher') == 'on'  # checkbox
-        category1 = ObjectId(request.form['category1'])
-        category2 = ObjectId(request.form['category2'])
-        category3 = ObjectId(request.form['category3'])
-        print('until here')
+        category1 = category2 = category3 = None
+
+        if 'category1' in request.form and request.form['category1'].strip():
+            category1 = ObjectId(request.form['category1'])
+
+        if 'category2' in request.form and request.form['category2'].strip():
+            category2 = ObjectId(request.form['category2'])
+
+        if 'category3' in request.form and request.form['category3'].strip():
+            category3 = ObjectId(request.form['category3'])
+
         # saving file in system
         photo = request.files['photo']
         filename = secure_filename(photo.filename)

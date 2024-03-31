@@ -1,31 +1,31 @@
 
-h2{
+h2 {
     color: #FFF9E4;
     margin: 5px;
 }
 
-h4{
+h4 {
     color: #FFF9E4;
     font-size: 15px;
     margin: 5px;
 }
 
-textarea{
+textarea {
     height: 100px;
     width: 300px;
 }
 
-.InputField{
+.InputField {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
 }
 
-select{
+select {
     width: 178px;
 }
 
-.UpLoadBlock{
+.UpLoadBlock {
     background-color: #E38B29;
     border-radius: 20px;
     align-items: center;

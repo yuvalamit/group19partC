@@ -25,6 +25,8 @@ def post_login():
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
+        if password is None or password == '' or email is None or email == '':
+            return render_template('login.html', error='invalid')
         user = find_user(email)
         if not user or user['password'] != password:
             # error login

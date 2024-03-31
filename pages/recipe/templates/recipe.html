@@ -54,7 +54,7 @@
             {% endfor %}
         </div>
         {% if LoggedIn %}
-            <form id="commentForm" action="/recipe" method="POST">
+            <form id="commentForm" action="/recipe/{{ recipe._id }}" method="POST">
                 <div class="inputComment">
                     <h4 class="comment">אני:</h4>
                     <input
@@ -63,6 +63,12 @@
                             placeholder="הכנס את תגובתך"
                     />
                     <input class="commentButton" type="submit" value="הוסף"/>
+                    {% if error %}
+                        <br>
+                        <h4 class="error-message">
+                            תגובה ריקה
+                        </h4>
+                    {% endif %}
                 </div>
             </form>
         {% else %}

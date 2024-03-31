@@ -80,7 +80,12 @@
                     {% endfor %}
                 </select>
             </div>
-
+            <br/>
+            {% if error %}
+                <h4 class="error-message">
+                    שגיאת בהעלאת מתכון
+                </h4>
+            {% endif %}
             <br/>
             <input class="loginB" type="submit" value="העלה"/>
         </form>

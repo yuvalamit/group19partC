@@ -14,7 +14,8 @@ upload = Blueprint('upload', __name__, static_folder='static', static_url_path='
 @upload.route('/upload')
 def get_upload():
     categories = get_categories()
-    return render_template('upload.html', LoggedIn=session_logged_in(), categories=categories)
+    error = request.args.get('error', False)
+    return render_template('upload.html', LoggedIn=session_logged_in(), categories=categories, error=error)
 
 
 @upload.route('/upload', methods=['POST'])
@@ -36,7 +37,8 @@ def post_upload():
 
         if 'category3' in request.form and request.form['category3'].strip():
             category3 = ObjectId(request.form['category3'])
-
+        if name is None or name =='' or ingredients is None or ingredients == '' or instructions is None or ingredients=='' or hardness is None or hardness == '' or minutes is None or minutes=='' or ((category1 is None or category1=='') and (category2 is None or category2=='') and (category3 is None or category3=='')):
+            return redirect('/upload/' + '/?error=true')
         # saving file in system
         photo = request.files['photo']
         filename = secure_filename(photo.filename)

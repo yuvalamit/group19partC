@@ -23,7 +23,8 @@ def post_register():
         birthdate = request.form['birth_date']
 
         # check if the passwords are equal and also if there is not user with this email
-        if password != confirm_password or find_user(email):
+        if password != confirm_password or find_user(
+                email) or email is None or email == '' or password is None or password == '' or city is None or city == '' or first_name is None or first_name == '' or last_name is None or last_name == '' or birthdate is None or birthdate == '':
             return render_template('registration.html', error='invalid')
 
         user = {

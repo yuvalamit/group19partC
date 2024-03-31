@@ -10,12 +10,15 @@ recipe = Blueprint('recipe', __name__, static_folder='static', static_url_path='
 @recipe.route('/recipe/<string:recipe_id>')
 def get_recipe(recipe_id):
     recipe_doc = get_single_recipe_with_comments(recipe_id)
-    return render_template('recipe.html', recipe=recipe_doc, LoggedIn=session_logged_in())
+    error = request.args.get('error', False)
+    return render_template('recipe.html', recipe=recipe_doc, LoggedIn=session_logged_in(), error=error)
 
 
 @recipe.route('/recipe/<string:recipe_id>', methods=['POST'])
 def insert_comment(recipe_id):
     comment = request.form['comment']
+    if comment is None or comment == '':
+        return redirect('/recipe/' + recipe_id + '/?error=true')
     comment = {
         'recipe_id': ObjectId(recipe_id),
         'comment': comment,
